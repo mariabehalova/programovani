@@ -1,0 +1,20 @@
+1. máme stránku, čistě HTML, něco jak vlastně už máš, můžeš použít i to. Na té stránce bude formulář. Formulář bude obsahovat 2 pole: Jméno a Datum narození. 
+2. do kolonky jméno se vyplní jméno a přijmení, do kolonky narození datum narození (můžeš udělat ověření čísla, ale není to nutný, napřed se zaměř na zbytek) 
+3. a samozřejmě tlačítko odeslat formulář.
+Po odeslání se to odešle na PHP stránku ke zpracování, které bude spočívat v tomto:
+načtení uživatelem zadaných dat ve formuláři
+hodnotu z políčka Jméno ten skript automaticky rozdělí a vytvoří dvě proměnné: křestní a příjmení – tzn. pokud napíšu Jáchym Brzezina, vytvoří se z toho Jáchym a druhá proměnná Brzezina. 
+abychom nasimulovali to, že máš už nějakou existující databázi, tak vytvoř pro každou hodnotu jednu array – jméno, příjmení, datum narození.
+do každé array vlož tyto hodnoty:
+1. hodnota – Jan Novák 1963, 2. hodnota – Jan Svoboda 1990
+tzn. každá z array obsahuje 2 prvky (array jméno, array příjmení a array datum narození).
+tohle vytvoř fixně (jakoby to tam prostě už bylo a stáhlo se někde z databáze)
+v dalším kroku ke každé array přidáš ty hodnoty, které zadal uživatel, tzn. vytvoříš v každé array třetí hodnotu, která bude odpovídat tomu, co jsem zadal ve formuláři – jméno, příjmení a datum narození
+Poslední část – výstup
+takže máme 3 array
+teď chci, abys vytvořila výstup v podobě tabulky – tzn. aby se vypsaly jednotlivé hodnoty do tabulky a to následovně:
+první sloupec – jméno, druhý sloupec – příjmení a třetí sloupec – pozor – ne datum narození ,ale věk – tzn. musíš ještě před výstupem nějakým způsobem (nebudu radit) vypočítat věk uživatele a ten vypsat, ne to datum co tam zadal. Můžeš to udělat přímo při výstupu, nebo si vytvořit novou array, která to bude obsahovat, to nechávám na tobě, možností je víc, podstatný je, aby tam byl ten věk. 
+Takže výstup pak bude vypadat tak, že bude tabulka se třema sloupcema (jméno, příjmení a věk) a pro každou hodnotu jeden řádek (první řádek bude ten Jan Novák, druhá svoboda, třetí to co zadal uživatel atd.)
+A jen ještě dvě věci na který chci aby sis dala pozor:
+ten výpis hodnot do tabulky udělej ne staticky ale dynamicky. Tzn. ne že napíšeš aby se vypsala první hodnota, druhá a třetí, ale aby se vypsaly všechny hodnoty – jinými slovy, aby to fungovalo s libovolným počtem hodnot v dané array a prostě se vypsaly všechny hodnoty nehledě kolik jich tam je.
+a zároveň chci, abys to udělala tak, aby ten věk fungoval kdykoliv –tzn. ne že budeš brát staticky 2014, ale aby ten skript byl „pořád aktuální“ a vycházel z aktuálního data jestli mi rozumíš (není to těžký, ale musíš si najít jak to udělat)
